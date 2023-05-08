@@ -8,7 +8,7 @@ jobs:
   test:
     timeout-minutes: 60
     container:
-      image: mcr.microsoft.com/playwright:v1.33.0-jammy
+      image: mcr.microsoft.com/playwright:v1.31.0-jammy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
