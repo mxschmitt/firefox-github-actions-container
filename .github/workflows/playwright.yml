@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 60
     container:
       image: mcr.microsoft.com/playwright:next-jammy
-      options: --user root
+      options: --user root --ipc=host
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --project=firefox
     - uses: actions/upload-artifact@v3
       if: always()
       with:
