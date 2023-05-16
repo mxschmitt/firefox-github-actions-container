@@ -25,6 +25,7 @@ jobs:
         path: playwright-report/
         retention-days: 30
     - name: Upload artifact
+      if: always()
       uses: actions/upload-pages-artifact@v1
       with:
         path: ./playwright-report
@@ -39,6 +40,7 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
       contents: read
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: test
     steps:
       - name: Deploy to GitHub Pages
