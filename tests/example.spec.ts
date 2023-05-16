@@ -16,3 +16,9 @@ test('get started link', async ({ page }) => {
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
 });
+
+test('should have Pavel on my website', async ({ page }) => {
+  await page.goto('https://connect.schmitt.mx');
+
+  await expect(page.getByText('Pavel)).toBeVisible();
+});
