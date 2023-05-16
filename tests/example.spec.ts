@@ -20,5 +20,5 @@ test('get started link', async ({ page }) => {
 test('should have Pavel on my website', async ({ page }) => {
   await page.goto('https://connect.schmitt.mx');
 
-  await expect(page.getByText('Pavel)).toBeVisible();
+  await expect(page.getByText('Pavel')).toBeVisible();
 });
