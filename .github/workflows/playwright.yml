@@ -14,10 +14,10 @@ jobs:
         node-version: 16
     - name: Install dependencies
       run: npm ci
-    - name: Install browsers
-      run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      uses: docker://mcr.microsoft.com/playwright:v1.34.3-jammy
+      with:
+        args: npx playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
